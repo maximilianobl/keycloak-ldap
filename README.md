@@ -8,15 +8,15 @@ Proyecto dockerizado en donde se implementa Keycloak junto a PostgreSQL y tambie
 ## Pasos iniciales
 
 #### Clonar repositorio
-```http
+```
   git clone http://xxxxxx
 ```
 #### Iniciar los contenedores
-```http
+```
   docker-compose up -d
 ```
 #### Ingresar a keycloak y crear nuevo Realm
-```http
+```
   http://localhost:8080/
 ```
 | User | Pass     |
