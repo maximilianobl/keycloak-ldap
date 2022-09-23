@@ -9,7 +9,7 @@ Proyecto dockerizado en donde se implementa Keycloak junto a PostgreSQL y tambie
 
 #### Clonar repositorio
 ```
-  git clone http://xxxxxx
+  git clone https://github.com/maximilianobl/keycloak-ldap.git
 ```
 #### Iniciar los contenedores
 ```
