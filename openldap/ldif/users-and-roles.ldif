@@ -1,0 +1,123 @@
+dn: ou=Users,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: organizationalUnit
+ou: Users
+
+dn: uid=picard,ou=Users,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Jean-Luc
+sn: Picard
+userPassword: password
+
+dn: uid=riker,ou=Users,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: William
+sn: Riker
+userPassword: password
+
+dn: uid=data,ou=users,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Data
+sn: -
+userPassword: password
+
+dn: uid=worf,ou=users,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Worf
+sn: -
+userPassword: password
+
+dn: uid=tasha,ou=users,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Tasha
+sn: Yar
+userPassword: password
+
+dn: uid=deanna,ou=users,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Deanna
+sn: Troi
+userPassword: password
+
+dn: ou=Groups,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: organizationalUnit
+ou: Groups
+
+dn: cn=Human,ou=Groups,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: groupOfUniqueNames
+uniqueMember: uid=picard,ou=users,{{ LDAP_BASE_DN }}
+uniqueMember: uid=riker,ou=Users,{{ LDAP_BASE_DN }}
+uniqueMember: uid=deanna,ou=users,{{ LDAP_BASE_DN }}
+uniqueMember: uid=tasha,ou=users,{{ LDAP_BASE_DN }}
+
+dn: cn=Klingon,ou=Groups,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: groupOfUniqueNames
+uniqueMember: uid=worf,ou=users,{{ LDAP_BASE_DN }}
+
+dn: cn=Android,ou=Groups,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: groupOfUniqueNames
+uniqueMember: uid=data,ou=users,{{ LDAP_BASE_DN }}
+
+dn: ou=Ships,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: organizationalUnit
+ou: Ships
+
+dn: ou=Enterprise,ou=Ships,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: organizationalUnit
+ou: Enterprise
+description: USS Enterprise-E
+
+dn: ou=Roles,ou=Enterprise,ou=Ships,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: organizationalUnit
+ou: Roles
+
+dn: cn=CAPTAIN,ou=Roles,ou=Enterprise,ou=Ships,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: groupOfUniqueNames
+uniqueMember: uid=picard,ou=users,{{ LDAP_BASE_DN }}
+
+dn: cn=COMMANDING_OFFICER,ou=Roles,ou=Enterprise,ou=Ships,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: groupOfUniqueNames
+uniqueMember: uid=riker,ou=users,{{ LDAP_BASE_DN }}
+
+dn: cn=SECURITY_OFFICER,ou=Roles,ou=Enterprise,ou=Ships,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: groupOfUniqueNames
+uniqueMember: uid=worf,ou=users,{{ LDAP_BASE_DN }}
+uniqueMember: uid=tasha,ou=users,{{ LDAP_BASE_DN }}
+
+dn: cn=OPERATIONS_OFFICER,ou=Roles,ou=Enterprise,ou=Ships,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: groupOfUniqueNames
+uniqueMember: uid=data,ou=users,{{ LDAP_BASE_DN }}
+
+dn: cn=COUNSELOR,ou=Roles,ou=Enterprise,ou=Ships,{{ LDAP_BASE_DN }}
+objectclass: top
+objectclass: groupOfUniqueNames
+uniqueMember: uid=deanna,ou=users,{{ LDAP_BASE_DN }}

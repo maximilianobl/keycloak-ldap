@@ -1,0 +1,153 @@
+{
+  "realm" : "starfleet",
+  "users" : [ {
+    "id" : "7685fb3d-7f5d-46a5-9c43-3b2717c29c92",
+    "createdTimestamp" : 1663942405979,
+    "username" : "data",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "Data",
+    "lastName" : "-",
+    "federationLink" : "bf0c8bcb-3647-44f5-85b1-a53be8fa8928",
+    "attributes" : {
+      "LDAP_ENTRY_DN" : [ "uid=data,ou=Users,dc=starfleet,dc=federation,dc=org" ],
+      "createTimestamp" : [ "20220923140447Z" ],
+      "modifyTimestamp" : [ "20220923140447Z" ],
+      "LDAP_ID" : [ "6d9c35d4-cf94-103c-8d3a-5fb5247aa124" ]
+    },
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-starfleet", "OPERATIONS_OFFICER" ],
+    "notBefore" : 0,
+    "groups" : [ "/Android" ]
+  }, {
+    "id" : "332f84bd-6371-4053-932d-6cfc19b3827b",
+    "createdTimestamp" : 1663942406004,
+    "username" : "deanna",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "Deanna",
+    "lastName" : "Troi",
+    "federationLink" : "bf0c8bcb-3647-44f5-85b1-a53be8fa8928",
+    "attributes" : {
+      "LDAP_ENTRY_DN" : [ "uid=deanna,ou=Users,dc=starfleet,dc=federation,dc=org" ],
+      "createTimestamp" : [ "20220923140447Z" ],
+      "modifyTimestamp" : [ "20220923140447Z" ],
+      "LDAP_ID" : [ "6d9d2bec-cf94-103c-8d3d-5fb5247aa124" ]
+    },
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-starfleet", "COUNSELOR" ],
+    "notBefore" : 0,
+    "groups" : [ "/Human" ]
+  }, {
+    "id" : "39af3c78-7f8d-459d-8a16-e93fa9dd4068",
+    "createdTimestamp" : 1663942405962,
+    "username" : "picard",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "Jean-Luc",
+    "lastName" : "Picard",
+    "federationLink" : "bf0c8bcb-3647-44f5-85b1-a53be8fa8928",
+    "attributes" : {
+      "LDAP_ENTRY_DN" : [ "uid=picard,ou=Users,dc=starfleet,dc=federation,dc=org" ],
+      "createTimestamp" : [ "20220923140447Z" ],
+      "modifyTimestamp" : [ "20220923140447Z" ],
+      "LDAP_ID" : [ "6d9b998a-cf94-103c-8d38-5fb5247aa124" ]
+    },
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "CAPTAIN", "default-roles-starfleet" ],
+    "notBefore" : 0,
+    "groups" : [ "/Human" ]
+  }, {
+    "id" : "10016e1e-21e7-457b-85c8-4aa1c96dbfcf",
+    "createdTimestamp" : 1663942405971,
+    "username" : "riker",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "William",
+    "lastName" : "Riker",
+    "federationLink" : "bf0c8bcb-3647-44f5-85b1-a53be8fa8928",
+    "attributes" : {
+      "LDAP_ENTRY_DN" : [ "uid=riker,ou=Users,dc=starfleet,dc=federation,dc=org" ],
+      "createTimestamp" : [ "20220923140447Z" ],
+      "modifyTimestamp" : [ "20220923140447Z" ],
+      "LDAP_ID" : [ "6d9bfa10-cf94-103c-8d39-5fb5247aa124" ]
+    },
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "COMMANDING_OFFICER", "default-roles-starfleet" ],
+    "notBefore" : 0,
+    "groups" : [ "/Human" ]
+  }, {
+    "id" : "390b3681-97b9-4113-8db2-1f541dfbe142",
+    "createdTimestamp" : 1663938754830,
+    "username" : "service-account-ldap",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "serviceAccountClientId" : "ldap",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-starfleet" ],
+    "clientRoles" : {
+      "ldap" : [ "uma_protection" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "602dca91-a1e4-485e-8885-c6f62f072f78",
+    "createdTimestamp" : 1663942405996,
+    "username" : "tasha",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "Tasha",
+    "lastName" : "Yar",
+    "federationLink" : "bf0c8bcb-3647-44f5-85b1-a53be8fa8928",
+    "attributes" : {
+      "LDAP_ENTRY_DN" : [ "uid=tasha,ou=Users,dc=starfleet,dc=federation,dc=org" ],
+      "createTimestamp" : [ "20220923140447Z" ],
+      "modifyTimestamp" : [ "20220923140447Z" ],
+      "LDAP_ID" : [ "6d9ccd28-cf94-103c-8d3c-5fb5247aa124" ]
+    },
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-starfleet", "SECURITY_OFFICER" ],
+    "notBefore" : 0,
+    "groups" : [ "/Human" ]
+  }, {
+    "id" : "28d288e3-fa30-4d81-8394-264504432995",
+    "createdTimestamp" : 1663942405987,
+    "username" : "worf",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "Worf",
+    "lastName" : "-",
+    "federationLink" : "bf0c8bcb-3647-44f5-85b1-a53be8fa8928",
+    "attributes" : {
+      "LDAP_ENTRY_DN" : [ "uid=worf,ou=Users,dc=starfleet,dc=federation,dc=org" ],
+      "createTimestamp" : [ "20220923140447Z" ],
+      "modifyTimestamp" : [ "20220923140447Z" ],
+      "LDAP_ID" : [ "6d9c6a86-cf94-103c-8d3b-5fb5247aa124" ]
+    },
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-starfleet", "SECURITY_OFFICER" ],
+    "notBefore" : 0,
+    "groups" : [ "/Klingon" ]
+  } ]
+}

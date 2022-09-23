@@ -1,0 +1,83 @@
+version: "3.7"
+
+services:
+  openldap:
+    image: osixia/openldap:1.2.4
+    container_name: openldap
+    hostname: openldap
+    ports:
+      - "389:389"
+      - "636:636"
+    environment:
+      - LDAP_ADMIN_PASSWORD=password
+      - LDAP_ORGANISATION=Starfleet
+      - LDAP_DOMAIN=starfleet.federation.org
+    volumes:
+      - ./openldap/ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom/
+    command: --copy-service --loglevel debug
+  
+  # phpldapadmin:
+  #     # User: Bind DN --> cn=admin,dc=starfleet,dc=federation,dc=org
+  #     # Pass: LDAP_ADMIN_PASSWORD=password
+  #     image: osixia/phpldapadmin:latest
+  #     container_name: phpldapadmin
+  #     environment:
+  #       PHPLDAPADMIN_LDAP_HOSTS: "openldap"
+  #       PHPLDAPADMIN_HTTPS: "false"
+  #     ports:
+  #       - "6443:443"
+  #     depends_on:
+  #       - openldap
+
+  keycloak:
+    ######################## Export realm ##################################
+    ######################## Exportar a directorio #########################
+    # docker exec -it keycloak /opt/jboss/keycloak/bin/standalone.sh \
+    # -Djboss.socket.binding.port-offset=100 \
+    # -Dkeycloak.migration.action=export \
+    # -Dkeycloak.migration.provider=dir \
+    # -Dkeycloak.migration.realmName=starfleet \
+    # -Dkeycloak.migration.dir=/tmp/export
+    ######################## Exportar a unico archivo #######################
+    # docker exec -it keycloak /opt/jboss/keycloak/bin/standalone.sh \
+    # -Djboss.socket.binding.port-offset=100 \
+    # -Dkeycloak.migration.action=export \
+    # -Dkeycloak.migration.provider=singleFile \
+    # -Dkeycloak.migration.realmName=starfleet \
+    # -Dkeycloak.migration.usersExportStrategy=REALM_FILE \
+    # -Dkeycloak.migration.file=/tmp/export/starfleet-full-realm.json
+
+    #image: quay.io/keycloak/keycloak:latest
+    image: jboss/keycloak:16.1.1
+    container_name: keycloak
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_PASSWORD: keycloak
+      DB_SCHEMA: public        
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - 8080:8080
+    volumes:
+      - ./keycloak/export:/tmp/export
+    command: ["-Dkeycloak.profile.feature.upload_scripts=enabled"]
+    depends_on:
+      - postgres
+    
+  postgres:
+    image: postgres:9.6
+    container_name: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+    ports:
+    - "5432:5432"
+volumes:
+  postgres_data:
+    driver: local
