@@ -43,7 +43,7 @@ Proyecto dockerizado en donde se implementa Keycloak junto a PostgreSQL y tambie
 Usando Postman podemos obtener un token válido con los usuarios y password correspondientes al LDPAP. Además, se configuró para obtener los roles de cada usuario.
 
 Token User:
-```http
+```
 curl -L -X POST 'http://localhost:8080/auth/realms/starfleet/protocol/openid-connect/token' \
 -H 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'username=riker' \
@@ -55,7 +55,7 @@ curl -L -X POST 'http://localhost:8080/auth/realms/starfleet/protocol/openid-con
 ```
 
 User Info:
-```http
+```
 curl -L -X POST 'http://localhost:8080/auth/realms/starfleet/protocol/openid-connect/userinfo' \
 -H 'Content-Type: application/x-www-form-urlencoded' \
 -H 'Authorization: Bearer {{token}}'
