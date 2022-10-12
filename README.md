@@ -13,7 +13,7 @@ Proyecto dockerizado en donde se implementa Keycloak junto a PostgreSQL y tambie
 ```
 #### Iniciar los contenedores
 ```
-  docker-compose up -d
+  docker-compose up -d OR make up
 ```
 #### Ingresar a keycloak y crear nuevo Realm
 ``` 
@@ -59,4 +59,13 @@ User Info:
 curl -L -X POST 'http://localhost:8080/auth/realms/starfleet/protocol/openid-connect/userinfo' \
 -H 'Content-Type: application/x-www-form-urlencoded' \
 -H 'Authorization: Bearer {{token}}'
+```
+
+#### Detener los contenedores
+```
+  docker-compose down OR make stop
+```
+#### Detener y eliminar los contenedores
+```
+  docker-compose down -v OR make prune
 ```
